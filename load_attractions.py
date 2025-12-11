@@ -64,6 +64,34 @@ rows=data['result']['results']
 con=get_db_connection()
 cursor=con.cursor()
 
+create_table_sql="""
+CREATE TABLE attractions(
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+_id INT,
+name VARCHAR(255) NOT NULL,
+CAT VARCHAR(255),
+description TEXT,
+rate INT,
+date DATE,
+direction TEXT,
+MRT VARCHAR(255),
+file TEXT,
+latitude DECIMAL(9,6),
+longitude DECIMAL(9,6),
+address VARCHAR(255),
+REF_WP INT,
+avBegin DATE,
+avEnd DATE,
+rowNumber INT,
+SERIAL_NO VARCHAR(255),
+MEMO_TIME INT,
+POI VARCHAR(255),
+idpt VARCHAR(255)
+);
+"""
+cursor.execute(create_table_sql)
+con.commit() # 🚨 提交變更，讓表格真正生效！
+print("INFO: Table 'attractions' created successfully.")
 # 3. filter data to fit what I need
 
 # for URLS(only keep the one which ends with jpg and png)
