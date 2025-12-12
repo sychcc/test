@@ -41,19 +41,6 @@ finally:
     server_cursor.close()
     server_con.close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # standalone python program to load raw data from json file
 # 1. read json file
 with open('data/taipei-attractions.json','r',encoding='utf-8')as f:
